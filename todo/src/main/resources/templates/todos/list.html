@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form th:object="${newTodo}" th:action="@{/todos}" method="post">
+        <input type="text" th:field="*{title}" />
+        <button type="submit">Add</button>
+    </form>
+    <p th:text="${userAddress + ': ' + funding}"></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Completed</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.title}"></td>
+                <td th:text="${todo.completed}"></td>
+                <td>
+                    <form th:action="@{/todos/{id}/complete(id=${todo.id})}" method="get">
+                        <button type="submit" th:if="${!todo.completed}">Complete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
