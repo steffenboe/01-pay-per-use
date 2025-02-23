@@ -21,7 +21,6 @@ import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.methods.response.EthGetBalance;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.Transfer;
-import org.web3j.tx.gas.DefaultGasProvider;
 import org.web3j.utils.Convert;
 import org.web3j.utils.Numeric;
 
@@ -38,15 +37,11 @@ public class EthereumPaymentGateway {
         String to = app.address();
 
         Credentials credentials = appUser.credentials();
-        Transfer.sendFundsEIP1559(
+        Transfer.sendFunds(
                 web3j, credentials,
-                to, // toAddress
-                BigDecimal.valueOf(amount), // value
-                Convert.Unit.ETHER, // unit
-                BigInteger.valueOf(21000), // gasLimit
-                DefaultGasProvider.GAS_LIMIT, // maxPriorityFeePerGas (max fee per gas transaction willing to give to
-                                              // miners)
-                BigInteger.valueOf(3_100_000_000L) // maxFeePerGas (max fee transaction willing to pay)
+                to, 
+                BigDecimal.valueOf(amount), 
+                Convert.Unit.ETHER 
         ).send();
     }
 

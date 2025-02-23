@@ -10,6 +10,26 @@
 	],
 	"settings": {
 		"java.compile.nullAnalysis.mode": "automatic",
-		"java.configuration.updateBuildConfiguration": "automatic"
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#41d0e6",
+			"activityBar.background": "#41d0e6",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#e11ec7",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"commandCenter.border": "#15202b99",
+			"sash.hoverBorder": "#41d0e6",
+			"statusBar.background": "#1cbfd8",
+			"statusBar.foreground": "#15202b",
+			"statusBarItem.hoverBackground": "#1697ab",
+			"statusBarItem.remoteBackground": "#1cbfd8",
+			"statusBarItem.remoteForeground": "#15202b",
+			"titleBar.activeBackground": "#1cbfd8",
+			"titleBar.activeForeground": "#15202b",
+			"titleBar.inactiveBackground": "#1cbfd899",
+			"titleBar.inactiveForeground": "#15202b99"
+		},
+		"peacock.remoteColor": "#1cbfd8"
 	}
 }
